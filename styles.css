@@ -1,0 +1,282 @@
+:root {
+    --white: #FFFFFF;
+
+    --primary: #5F2EEA;
+    --primary-hover: #2A00A2;
+    --primary-focus: #E4DAFF;
+
+    --secondary-focus: #EFF0F6;
+
+    --text-focus: #EFF0F6;
+
+    --icon-focus: #E4DAFF;
+}
+
+@font-face {
+    font-family: 'poppinsSemiBold';
+    src: url('./Fonts/poppins-semibold.eot');
+    src: url('./Fonts/poppins-semibold.eot?#iefix') format('embedded-opentype'),
+        url('./Fonts/poppins-semibold.woff') format('woff'),
+        url('./Fonts/poppins-semibold.otf') format('opentype'),
+        url('./Fonts/poppins-semibold.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    text-rendering: optimizeLegibility;
+}
+
+.wrapper {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.img-fluid {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+
+h1 {
+    /* font-family: 'Poppins', sans-serif; */
+    font-weight: 400;
+    font-size: 64px;
+    margin: 0;
+    padding: 0;
+    line-height: 66px;
+    letter-spacing: 1px;
+    color: #14142B;
+}
+
+h1.bold {
+    font-weight: 700;
+}
+
+p {
+    /* font-family: 'Poppins', sans-serif; */
+    /* font-weight: 400; */
+    font-size: 24px;
+    line-height: 38px;
+    letter-spacing: 0.75px;
+
+    color: #4E4B66;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    /* font-family: 'Poppins', sans-serif; */
+    /* font-weight: 600; */
+    font-size: 24px;
+    line-height: 38px;
+    letter-spacing: 0.75px;
+    display: block;
+    background-color: floralwhite;
+    color: #14142B;
+    text-decoration-line: none;
+}
+
+.btn {
+    display: block;
+    margin: 0 auto;
+    /* attention avec les valeurs 0 auto*/
+    border: transparent;
+    border-radius: 40px;
+    max-width: 100%;
+    /*font-weight: 600;*/
+    /*Semi Bold import google font*/
+    font-family: 'poppinsSemiBold';
+    letter-spacing: 0.75px;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    outline: none;
+}
+
+:-webkit-direct-focus {
+    outline-color: none;
+    outline-style: none;
+    outline-width: 0;
+}
+
+.btn--large {
+    height: 64px;
+}
+
+.btn--large,
+.btn--medium {
+    font-size: 16px;
+    min-width: 200px;
+    line-height: 28px;
+}
+
+.btn--large,
+.btn--medium,
+.btn--small {
+    padding: 0 10px;
+}
+
+.btn--small {
+    min-width: 120px;
+}
+
+/* PRIMARY */
+.btn--primary {
+    color: #F7F7FC;
+    background-color: var(--primary);
+}
+
+.btn--primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn--primary:focus {
+    box-shadow: 0 0 0 8px var(--primary-focus);
+    -webkit-box-shadow: 0 0 0 8px var(--primary-focus);
+}
+
+/* SECONDARY */
+.btn--secondary {
+    color: var(--primary);
+    background-color: var(--white);
+    border: 2px solid var(--primary);
+}
+
+.btn--secondary:hover {
+    color: var(--primary-hover);
+    border: 2px solid var(--primary-hover);
+}
+
+.btn--secondary:focus {
+    box-shadow: 0 0 0 8px var(--secondary-focus);
+}
+
+/* TEXT */
+.btn--text {
+    color: var(--primary);
+    background-color: var(--white);
+    min-width: 100px;
+}
+
+.btn--text:hover {
+    color: var(--primary-hover);
+}
+
+.btn--text:focus {
+    background-color: var(--text-focus);
+}
+
+/* ICON */
+.btn--icon {
+    height: 54px;
+    width: 54px;
+    min-width: inherit;
+    background-color: var(--primary);
+}
+
+.btn--icon:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn--icon:focus {
+    box-shadow: 0 0 0 8px var(--icon-focus);
+}
+
+/* RADIO */
+.radio-wrapper {
+    position: relative;
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.radio {
+    position: relative;
+    display: inline-block;
+    outline: none;
+}
+
+.radio-check:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #1890ff;
+    border-radius: 50%;
+    visibility: hidden;
+    -webkit-animation: antRadioEffect .36s ease-in-out;
+    animation: antRadioEffect .36s ease-in-out;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.radio-input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.radio-check .radio-inner {
+    border-color: #1890ff;
+}
+
+.radio-inner {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-color: #d9d9d9;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 50%;
+    transition: all .3s;
+}
+
+.radio-inner:after {
+    content: " ";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #1890ff;
+    border-top: 0;
+    border-left: 0;
+    border-radius: 8px;
+    transform: scale(0);
+    opacity: 0;
+    transition: all .3s cubic-bezier(.78, .14, .15, .86);
+}
+
+.radio-check .radio-inner:after {
+    transform: scale(1);
+    opacity: 1;
+    transition: all .3s cubic-bezier(.78, .14, .15, .86);
+}
+
+.radio+* {
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+.radio-input:focus+.radio-inner {
+    box-shadow: 0 0 0 3px #1890ff14;
+}
+
+.radio-wrapper:hover .radio,
+.radio:hover .radio-inner,
+.radio-input:focus+.radio-inner {
+    border-color: #1890ff;
+}
